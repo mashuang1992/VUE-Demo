@@ -1,5 +1,6 @@
 # VUE-Demo
 vue+webpack demo  拆分css和img
+```
 
 This repo is a collection of simple demos of Webpack.
 
@@ -81,31 +82,12 @@ npm install webpack webpack-dev-server --save-dev
 
 文件目录结构如图所示：
 
-
-
+```
+```
 项目github地址：https://github.com/HelloWoed/webpack-project-demo
 
 说明一下：由于使用了css分离，会导致css背景图片和html img标签图片路径出错问题，这里的解决办法是：css中使用的图片用assets/static/images中的图片，css-loader配置的options中url：false，这样在解析css时就不会处理css图片路径，
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
 {
                 test:/\.less$/,
                 use: ExtractTextWebpackPlugin.extract({
@@ -127,14 +109,6 @@ npm install webpack webpack-dev-server --save-dev
             },
 　　最后将static目录拷贝到相应的打包目录（这里使用的是 copy-webpack-plugin 插件）static目录为你静态数据目录
 
- 
-
-1
-2
-3
-4
-5
-6
 new copyWebpackPlugin([
             {
             from:__dirname+'/src/assets/static',//打包的静态资源目录地址
@@ -143,47 +117,13 @@ new copyWebpackPlugin([
         ]),
  
 
-　　
+```　　
 
  
-
+```
+```
 package.json配置文件如下：
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
 {
   "name": "testwebpack",
   "version": "1.0.0",
@@ -223,207 +163,7 @@ package.json配置文件如下：
 
 webpack.config.js文件配置如下：（有很多配置项可根据具体情况设置，不用全部配置）
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // 拆分css样式的插件
@@ -453,6 +193,7 @@ module.exports = {
             '@': resolve('src'),
         }
     },
+    
     //在webpack4之前，提取公共代码都是通过一个叫CommonsChunkPlugin的插件来办到的。到了webpack4以后，内置了一个一模一样的功能，就是所谓的“优化”
 //    optimization: {  // 提取公共代码
 //         splitChunks: {
@@ -471,6 +212,7 @@ module.exports = {
 //             }
 //         }
 //     },
+
     performance: {
         hints: "warning", // 枚举
         maxAssetSize: 30000000, // 整数类型（以字节为单位）
@@ -625,15 +367,10 @@ module.exports = {
          
     }
 }
-　　
 
 postcss.config.js文件配置如下：
 
-1
-2
-3
-4
-5
+
 module.exports = {
     plugins: [
         require('autoprefixer')
@@ -1046,3 +783,4 @@ module.exports = {
 
 }
 
+```
