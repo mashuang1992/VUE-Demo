@@ -1,5 +1,14 @@
 # VUE-Demo
 vue+webpack demo  拆分css和img
+# 常用：
+
+```
+1.判断位数 自动加0
+字符串.padStart(位数，0)
+
+2.vue2.0
+return `${变量}`
+```
 
 # 配置环境：
 
